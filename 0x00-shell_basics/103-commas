@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -maxdepth 1 -printf '%f, ' -type d -name '.*' -printf '%f, ' | sort | tr -d '\n' | sed 's/,$/\n/'
+find . -maxdepth 1 -printf '%P, ' -type d -name '.*' -printf '%P/, ' | sort | tr -d '\n' | sed 's/,$/\n/'
