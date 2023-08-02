@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -maxdepth 1 -printf '%P, ' -type d -name '.*' -printf '%P/, ' | sort | tr -d '\n' | sed 's/,$/\n/'
+(printf "./, ../, "; find . -maxdepth 1 -type d -name '.*' -printf '%P/, '; find . -maxdepth 1 -type f -name '[A-Z]*' -printf '%P, ') | tr -d '\n' && echo
