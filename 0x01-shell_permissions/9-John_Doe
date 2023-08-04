@@ -1,2 +1,3 @@
 #!/bin/bash
-chmod a=wx hello
+chmod 753 hello
+ls -l hello
