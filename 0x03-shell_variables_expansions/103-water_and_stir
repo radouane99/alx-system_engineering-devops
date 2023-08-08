@@ -1,24 +1,2 @@
 #!/bin/bash
-
-# Environment variables
-WATER="$WATER"
-STIR="$STIR"
-
-# Check if the lengths of the strings are equal
-if [ "${#WATER}" -ne "${#STIR}" ]; then
-    echo "Error: The lengths of WATER and STIR are not equal."
-    exit 1
-fi
-
-# Calculate the result
-result=""
-for ((i = 0; i < ${#WATER}; i++)); do
-    char_water="${WATER:$i:1}"
-    char_stir="${STIR:$i:1}"
-
-    result_char=$(printf "%d" "'$char_water" + "'$char_stir" - 194)
-    result+="$(printf "\\$(printf %o "$result_char")")"
-done
-
-# Print the result
-echo "$result"
+echo "$WATER$STIR" | tr 'abcdefghijklmnopqrstuvwxyz' 'scholebfghitydjmpknquvrwxz'
